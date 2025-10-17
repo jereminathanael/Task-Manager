@@ -35,7 +35,7 @@ const TaskHistory = () => {
                 {/* konten dari note */}
                 <div className="bg-gray-100 p-3 rounded shadow-sm">
                   <p className="text-gray-700">{h.note}</p>
-                  {h.date && (
+                  {h.created_at && (
                     <p className="text-xs text-gray-500 mt-1">
                       {new Date(h.created_at).toLocaleDateString("id-ID", {
                         day: "2-digit",
