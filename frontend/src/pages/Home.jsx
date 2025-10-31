@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { apiFetch } from "../api/api";
 import TaskCard from "../components/TaskCard";
+import EmptyState from "../components/EmptyState";
 
 const statusOptions = ["Semua", "Belum Dimulai", "Sedang Dikerjakan", "Selesai"];
 
@@ -38,7 +39,11 @@ const Home = ({ title }) => {
         </select>
       </div>
       {filteredTasks.length === 0 ? (
-        <div>tidak ada task</div>
+        <div className="flex flex-col items-center justify-center text-center bg-white rounded-2xl p-8">
+          <EmptyState />
+          <h2 className="mt-6 text-xl font-semibold text-slate-800">Tidak Ada Daftar Task</h2>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-xs">Tidak ada task. Coba lagi nanti atau tambahkan data baru.</p>
+        </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {filteredTasks.map((t, idx) => (

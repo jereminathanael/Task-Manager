@@ -15,7 +15,7 @@ export default function Login() {
       await login(username, password);
       navigate("/"); // redirect ke homee
     } catch (err) {
-      setError(err.message + ": Silahkan cek Backend");
+      setError(err.message);
     }
   };
 

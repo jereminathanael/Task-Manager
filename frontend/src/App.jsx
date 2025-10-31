@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./middleware/ProtectedRoute";
+import HandleLoggedIn from "./middleware/HandleLoggedIn";
 import Home from "./pages/Home";
 import CreateTask from "./pages/CreateTask";
 import Dashboard from "./pages/Dashboard";
@@ -22,7 +23,14 @@ function App() {
         <Navbar open={open} />
 
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={
+              <HandleLoggedIn>
+                <Login />
+              </HandleLoggedIn>
+            }
+          />
           <Route
             path="/"
             element={

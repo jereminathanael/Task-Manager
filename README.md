@@ -1,6 +1,6 @@
 <!-- Username & Password untuk login -->
 
-Username: ManagerHB
+Username: User123
 Password: 12345
 
 <!-- Cara menjalankan Website -->

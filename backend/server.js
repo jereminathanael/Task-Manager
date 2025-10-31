@@ -12,8 +12,8 @@ import { authMiddleware } from "./middleware/authmiddleware.js";
   const rows = result.rowCount;
   if (rows === 0) {
     const hash = await bcrypt.hash("12345", 10);
-    await db.query("INSERT INTO users (username, password, role) VALUES ($1, $2, $3)", ["ManagerHB", hash, "manager"]);
-    console.log("Default akun manager: username=ManagerHB, password=12345");
+    await db.query("INSERT INTO users (username, password, role) VALUES ($1, $2, $3)", ["User123", hash, "manager"]);
+    console.log("Default akun manager: username=User123, password=12345");
   } else {
     console.log("Manager akun sudah ada");
   }
